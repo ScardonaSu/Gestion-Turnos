@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Asesores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXNlc29yZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

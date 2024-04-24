@@ -1,0 +1,48 @@
+@model Asesor
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+    
+    <form asp-action="Create" method="post" >
+        <div class="form-group">
+            <div class="col">
+                <label>Nombre</label>
+                <input class="form-control" asp-for="Nombre" />
+            </div>
+            <div class="col">
+                <label>Apellido</label>
+                <input class="form-control" asp-for="Apellido" />
+            </div>
+            <div class="col">
+                <label>correo</label>
+                <input type="email" class="form-control" asp-for="Correo" />
+            </div>
+            <div class="col">
+                <label>Documento</label>
+                <input class="form-control" asp-for="Documento" />
+            </div>
+            <div class="col">
+                <select class="form-control" asp-for="Conocimientos">
+                    <option value="Facturacion">Facturacion</option>
+                    <option value="Agendamiento_citas">Agendamiento Citas</option>
+                    <option value="Medicamentos">Medicamentos</option>
+                    <option value="Todas_las_opciones">Todas las opciones</option>
+                </select>
+            </div>
+            <div class="col">
+                <label>Contraseña</label>
+                <input class="form-control" asp-for="Password" />
+            </div>
+        </div>
+    </form>
+
+</div>
+</body>
+</html>

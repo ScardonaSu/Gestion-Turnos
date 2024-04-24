@@ -14,6 +14,11 @@ public class AsesoresController : Controller
         _Context = context;
     }
     
+    public IActionResult Login()
+    {
+        return View();
+    }
+    
     public IActionResult Create()
     {
         return View(); 
@@ -22,16 +27,9 @@ public class AsesoresController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Asesor _asesor)
     {
-        if (ModelState.IsValid)
-        {
-            _Context.Asesores.Add(_asesor);
-            await _Context.SaveChangesAsync();
-            return RedirectToAction("Index", "Home");
-        }
-        else
-        {
-            return View();
-        }
+        _Context.Asesores.Add(_asesor);
+        await _Context.SaveChangesAsync();
+        return RedirectToAction("Login", "Asesores");
     }
     
     

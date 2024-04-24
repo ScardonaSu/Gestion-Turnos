@@ -12,7 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Views\Asesores\" />
       <Folder Include="Views\Turnos\" />
       <Folder Include="Views\Usuarios\" />
     </ItemGroup>

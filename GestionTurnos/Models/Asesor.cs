@@ -15,9 +15,7 @@ public class Asesor
     
     public string Password { get; set; }
     
-    public string Rol { get; set; }
-    
-    public string Conocimiento { get; set; }
+    public string Conocimientos { get; set; }
     
     public int Clientes_Atendidos { get; set; }
     

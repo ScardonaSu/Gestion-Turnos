@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JOnMx99spWffxg61fJ0GJOVh3x2tfay8JGtM330L1jtxpNcuqQuoROiKgRLZcG7+oiBVYFrDFbeLFm0RY17zGw==",
+  "dgSpecHash": "+6vRA7TCVAArTvUkDGIJU4V4k8VDoBPD1T8cJXBlvGc6ua1le9O5xFBwk4kW7WNF8acjIoN0oIBrI7b8Q0SrIw==",
   "success": true,
-  "projectFilePath": "/Users/santiagocardona/Documents/C#/API/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
+  "projectFilePath": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
   "expectedPackageFiles": [
     "/Users/santiagocardona/.nuget/packages/microsoft.entityframeworkcore/8.0.4/microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
     "/Users/santiagocardona/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.4/microsoft.entityframeworkcore.abstractions.8.0.4.nupkg.sha512",

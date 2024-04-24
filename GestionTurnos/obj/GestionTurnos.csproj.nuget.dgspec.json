@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/santiagocardona/Documents/C#/API/GestionTurnos/GestionTurnos/GestionTurnos.csproj": {}
+    "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj": {}
   },
   "projects": {
-    "/Users/santiagocardona/Documents/C#/API/GestionTurnos/GestionTurnos/GestionTurnos.csproj": {
+    "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/santiagocardona/Documents/C#/API/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
+        "projectUniqueName": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
         "projectName": "GestionTurnos",
-        "projectPath": "/Users/santiagocardona/Documents/C#/API/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
+        "projectPath": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
         "packagesPath": "/Users/santiagocardona/.nuget/packages/",
-        "outputPath": "/Users/santiagocardona/Documents/C#/API/GestionTurnos/GestionTurnos/obj/",
+        "outputPath": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/santiagocardona/.nuget/NuGet/NuGet.Config"

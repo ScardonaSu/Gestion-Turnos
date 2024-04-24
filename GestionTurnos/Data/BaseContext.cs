@@ -1,3 +1,4 @@
+using GestionTurnos.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestionTurnos.Data;
@@ -9,6 +10,9 @@ public class BaseContext: DbContext
         
     }
     
+    public DbSet<Asesor> Asesores { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Turno> Turnos { get; set; }
     
     
     

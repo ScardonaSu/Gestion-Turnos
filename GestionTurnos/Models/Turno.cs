@@ -9,4 +9,6 @@ public class Turno
     public bool Discapacidad { get; set; }
     
     public string Tipo_gestion { get; set; }
+    
+    public string Proceso { get; set; }
 }

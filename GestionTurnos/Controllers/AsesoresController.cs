@@ -33,7 +33,7 @@ public class AsesoresController : Controller
         
         if (asesor != null && verifyPassword == true)
         {
-            
+            this.HttpContext.Session.SetInt32("session",asesor.Id);
             return RedirectToAction("Create", "Asesores");
         }
         
@@ -44,9 +44,8 @@ public class AsesoresController : Controller
 
     public async Task<IActionResult> Logout()
     {
-        /*await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        HttpContext.Session.Clear();
-        HttpContext.Session.Remove("session");*/
+/*         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);*/
+        HttpContext.Session.Remove("session");
         
         return RedirectToAction("Login", "Asesores");
     }
@@ -55,14 +54,22 @@ public class AsesoresController : Controller
     
     public IActionResult Create()
     {
-        return View(); 
+        /* ////////////// GUARDIAN  ///////// */
+        var SesionUser = HttpContext.Session.GetInt32("session");
+        if (SesionUser != null)
+        {
+            return RedirectToAction("Index", "Asesores"); /* COLOCAR EN VISTA DESPUES DE QUE EL USUARIO INGRESA AL SISTEMA Y COLOCAR LAS VISTAS CORRESPONDIENTES */
+        }else
+        {
+            return View();
+        }
+        
     }
 
     [HttpPost]
     public async Task<IActionResult> Create(Asesor _asesor)
     {
       
-
         _asesor.Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password);
         _Context.Asesores.Add(_asesor);
         await _Context.SaveChangesAsync();

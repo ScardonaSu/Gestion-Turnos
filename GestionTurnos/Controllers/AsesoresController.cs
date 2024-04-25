@@ -1,12 +1,9 @@
 using System.Security.Claims;
 using GestionTurnos.Data;
 using GestionTurnos.Models;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-=======
 using Microsoft.AspNetCore.Identity;
->>>>>>> d8e829df6229074679061d7e8d2e8ffa41bcc2fb
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,14 +12,9 @@ namespace GestionTurnos.Controllers;
 public class AsesoresController : Controller
 {
 
-<<<<<<< HEAD
-    private readonly BaseContext _Context;
-    
-=======
     public readonly BaseContext _Context;
     private object Password;
 
->>>>>>> d8e829df6229074679061d7e8d2e8ffa41bcc2fb
     public AsesoresController(BaseContext context)
     {
         _Context = context;

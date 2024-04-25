@@ -10,23 +10,23 @@
 <body>
 <div>
     
-    <form asp-action="Create" method="post" >
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <div class="col">
                 <label>Nombre</label>
-                <input class="form-control" asp-for="Nombre" />
+                <input class="form-control" asp-for="Nombre"/>
             </div>
             <div class="col">
                 <label>Apellido</label>
-                <input class="form-control" asp-for="Apellido" />
+                <input class="form-control" asp-for="Apellido"/>
             </div>
             <div class="col">
                 <label>correo</label>
-                <input type="email" class="form-control" asp-for="Correo" />
+                <input type="email" class="form-control" asp-for="Correo"/>
             </div>
             <div class="col">
                 <label>Documento</label>
-                <input class="form-control" asp-for="Documento" />
+                <input class="form-control" asp-for="Documento"/>
             </div>
             <div class="col">
                 <select class="form-control" asp-for="Conocimientos">
@@ -38,8 +38,14 @@
             </div>
             <div class="col">
                 <label>Contraseña</label>
-                <input class="form-control" name="password" />
+                <input class="form-control" name="password"/>
             </div>
+            <div class="col">
+                <label>Foto de Perfil</label>
+                <input type="file" class="form-control" name="Foto"/>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Registrate</button>
         </div>
     </form>
     

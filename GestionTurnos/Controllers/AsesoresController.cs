@@ -18,6 +18,7 @@ public class AsesoresController : Controller
     
     public IActionResult Login()
     {
+
         return View();
     }
     
@@ -29,13 +30,14 @@ public class AsesoresController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Asesor _asesor)
     {
-        Asesor newAsesor = new Asesor{
+       /*  Asesor newAsesor = new Asesor{
             
             Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password)
 
         };
-        _asesor.Password = newAsesor.Password;
+        _asesor.Password = newAsesor.Password; */
 
+        _asesor.Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password);
         _Context.Asesores.Add(_asesor);
         await _Context.SaveChangesAsync();
         return RedirectToAction("Login", "Asesores");

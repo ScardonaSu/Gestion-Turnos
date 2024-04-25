@@ -10,7 +10,7 @@
 <body>
 <div>
     
-    <form asp-action="Create" method="post" >
+    <form asp-action="Create" asp-controller="Asesores" method="post" >
         <div class="form-group">
             <div class="col">
                 <label>Nombre</label>
@@ -38,8 +38,9 @@
             </div>
             <div class="col">
                 <label>Contraseña</label>
-                <input class="form-control" name="password" />
+                <input class="form-control" asp-for="Password"/>
             </div>
+            <button type="submit" class="btn btn-primary">enviar</button>
         </div>
     </form>
 

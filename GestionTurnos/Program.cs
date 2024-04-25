@@ -11,8 +11,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BaseContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("MySqlConnection"),
-        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")));
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql"))
+);
 
+/// session
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(60);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 
 var app = builder.Build();

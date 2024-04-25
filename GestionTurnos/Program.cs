@@ -15,6 +15,7 @@ builder.Services.AddDbContext<BaseContext>(options =>
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")));
 
 
+/*
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
     {
         //1.Formulario de logeo
@@ -34,6 +35,7 @@ builder.Services.AddSession(options =>
         options.Cookie.HttpOnly = true;
         options.Cookie.IsEssential = true;
     });
+    */
 
 
 
@@ -52,7 +54,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
+/*app.UseAuthentication();*/
 app.UseAuthorization();
 
 app.MapControllerRoute(

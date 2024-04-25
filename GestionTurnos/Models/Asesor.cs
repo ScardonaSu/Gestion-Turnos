@@ -19,6 +19,6 @@ public class Asesor
     
     public int Clientes_Atendidos { get; set; }
     
-    public int Id_Modulo { get; set; }
+    /*public int Id_Modulo { get; set; }*/
     
 }

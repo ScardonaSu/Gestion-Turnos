@@ -11,7 +11,7 @@ namespace GestionTurnos.Controllers;
 public class AsesoresController : Controller
 {
 
-    public readonly BaseContext _Context;
+    private readonly BaseContext _Context;
     
     public AsesoresController(BaseContext context)
     {
@@ -26,44 +26,26 @@ public class AsesoresController : Controller
     [HttpPost]
     public async Task<IActionResult> Login(string correo, string password)
     {
+        
+        var aseseor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo && e.Password == password);
 
-        var asesor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo && e.Password == password);
-
-        if (asesor != null)
+        if (aseseor != null)
         {
-
-            var claim = new List<Claim>
-            {
-                new Claim(ClaimTypes.Email, asesor.Correo)
-            };
-
-            var claimsIdentity = new ClaimsIdentity(claim, CookieAuthenticationDefaults.AuthenticationScheme);
-
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity));
-            
-            
-            HttpContext.Session.SetString("Session", asesor.ToString());
 
             _Context.SaveChanges();
-            
-            //TODO: Cambiar la ruta
-            return RedirectToAction("Login", "Home");
-
-
+            return RedirectToAction("Index", "Home");
         }
-        else
-        {
-            return View();
-        }
+        
+        return RedirectToAction("Login", "Asesores");
 
     }
+    
 
     public async Task<IActionResult> Logout()
     {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        /*await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         HttpContext.Session.Clear();
-        HttpContext.Session.Remove("session");
+        HttpContext.Session.Remove("session");*/
         
         return RedirectToAction("Login", "Asesores");
     }

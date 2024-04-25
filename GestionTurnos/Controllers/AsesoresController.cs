@@ -28,13 +28,13 @@ public class AsesoresController : Controller
     public async Task<IActionResult> Login(string correo, string password)
     {
         
-        var aseseor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo && e.Password == password);
-
-        if (aseseor != null)
+        var asesor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo);
+        var verifyPassword = BCrypt.Net.BCrypt.Verify(password,asesor.Password); 
+        
+        if (asesor != null && verifyPassword == true)
         {
-
-            _Context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            
+            return RedirectToAction("Create", "Asesores");
         }
         
         return RedirectToAction("Login", "Asesores");
@@ -61,12 +61,7 @@ public class AsesoresController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Asesor _asesor)
     {
-       /*  Asesor newAsesor = new Asesor{
-            
-            Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password)
-
-        };
-        _asesor.Password = newAsesor.Password; */
+      
 
         _asesor.Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password);
         _Context.Asesores.Add(_asesor);

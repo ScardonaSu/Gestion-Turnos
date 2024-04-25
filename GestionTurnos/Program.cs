@@ -14,7 +14,11 @@ builder.Services.AddDbContext<BaseContext>(options =>
         builder.Configuration.GetConnectionString("MySqlConnection"),
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")));
 
-
+builder.Services.AddSession(options => {
+    options.IdleTimeout = TimeSpan.FromMinutes(25);
+    options.Cookie.IsEssential = true;
+    options.Cookie.HttpOnly = true;
+});
 /*
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
     {
@@ -56,6 +60,7 @@ app.UseRouting();
 
 /*app.UseAuthentication();*/
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

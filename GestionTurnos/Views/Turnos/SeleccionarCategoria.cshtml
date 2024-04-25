@@ -1,0 +1,31 @@
+@{
+    ViewData["Title"] = "Sellecionar categoria";
+    var hora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-flex">
+            <div class="col float-right">
+                <p>@ViewBag.Documento</p>
+            </div>
+            <div class="col">
+                <p>@hora</p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="text-center">
+            <h1>Escoge una categoría para tomar el turno</h1>
+            <div class="grid-container">
+                <div class="row text-center">                    
+                    @foreach(var categoria in Model){
+                        <div class="col-sm-6 p-2">                        
+                            <a asp-controller="Turnos" asp-action="TomarTurno" asp-route-siglas="@categoria.Abreviacion" class="grid-item d-flex btn btn-lg btn-dark">@categoria.Nombre</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

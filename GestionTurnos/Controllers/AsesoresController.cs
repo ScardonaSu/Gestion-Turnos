@@ -14,10 +14,8 @@ namespace GestionTurnos.Controllers;
 public class AsesoresController : Controller
 {
 
-
     public readonly BaseContext _Context;
     private object Password;
-
 
     public AsesoresController(BaseContext context)
     {

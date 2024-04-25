@@ -65,6 +65,15 @@ public class AsesoresController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Asesor _asesor)
     {
+        var Foto = Request.Form.Files["Foto"];
+        if (Foto != null && Foto.Length > 0)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                await Foto.CopyToAsync(memoryStream);
+                _asesor.FotoPerfil = memoryStream.ToArray();
+            }
+        }
         Asesor newAsesor = new Asesor{
             
             Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password)

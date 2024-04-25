@@ -483,6 +483,6 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-.DS_Store
-
-.mono
+# Archivos específicos de .NET Core
+*.mona
+.DS_Storeh

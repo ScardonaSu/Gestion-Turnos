@@ -1,15 +1,31 @@
-@model dynamic
+@model Asesor
 
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>title</title>
+    <title>Login</title>
 </head>
 <body>
 <div>
-      
+
+    <div class="row mt-5">
+        <div class="col-sm-4 offset-sm-4">
+            <form asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" asp-for="Correo">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" asp-for="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>

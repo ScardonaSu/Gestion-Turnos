@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestionTurnos.Models;
 
-public class Usuario 
+public class Usuario
 {
     
     public int Id { get; set; }

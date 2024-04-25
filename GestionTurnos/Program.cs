@@ -1,4 +1,5 @@
 using GestionTurnos.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,29 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+/*
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
+    {
+        //1.Formulario de logeo
+        options.LoginPath = "/Asesores/Login";
+        //2. Cuanto tiempo va a estar vivo el cookie
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        //3. Formulario de acceso denegado 
+        options.AccessDeniedPath = "/Home/Privacy";
+    });
+
+//Cache
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => 
+    {
+        options.IdleTimeout = TimeSpan.FromSeconds(10);
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true;
+    });
+    */
+
+
 
 var app = builder.Build();
 
@@ -38,10 +62,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+/*app.UseAuthentication();*/
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Asesores}/{action=Login}/{id?}");
 
 app.Run();

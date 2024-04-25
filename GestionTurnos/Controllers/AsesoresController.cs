@@ -1,7 +1,9 @@
+using System.Security.Claims;
 using GestionTurnos.Data;
 using GestionTurnos.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestionTurnos.Controllers;
 
@@ -21,6 +23,35 @@ public class AsesoresController : Controller
 
         return View();
     }
+
+    [HttpPost]
+    public async Task<IActionResult> Login(string correo, string password)
+    {
+        
+        var aseseor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo && e.Password == password);
+
+        if (aseseor != null)
+        {
+
+            _Context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+        
+        return RedirectToAction("Login", "Asesores");
+
+    }
+    
+
+    public async Task<IActionResult> Logout()
+    {
+        /*await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        HttpContext.Session.Clear();
+        HttpContext.Session.Remove("session");*/
+        
+        return RedirectToAction("Login", "Asesores");
+    }
+    
+    
     
     public IActionResult Create()
     {

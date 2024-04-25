@@ -37,8 +37,7 @@ public class AsesoresController : Controller
 
         if (aseseor != null)
         {
-
-            _Context.SaveChanges();
+            
             return RedirectToAction("Index", "Home");
         }
         

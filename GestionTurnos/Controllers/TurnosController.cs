@@ -17,10 +17,7 @@ public class TurnosController : Controller
     public IActionResult Index()
     {
         var query = from Asesor in _context.Asesores
-            join turno in _context.Turnos on Asesor.Documento equals turno.CC_Usuario select new {ccuser = turno.CC_Usuario, nameAsesor = Asesor.Nombre};
-        
-        
-        
+            join turno in _context.Turnos on Asesor.Documento equals turno.Documento select new {ccuser = turno.Documento, nameAsesor = Asesor.Nombre};
         
         return View(query);
     }

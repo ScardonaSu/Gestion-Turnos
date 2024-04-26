@@ -1,4 +1,5 @@
 using GestionTurnos.Data;
+using GestionTurnos.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,7 +42,7 @@ builder.Services.AddSession(options =>
     });
     */
 
-
+builder.Services.AddScoped<Turno>();
 
 var app = builder.Build();
 

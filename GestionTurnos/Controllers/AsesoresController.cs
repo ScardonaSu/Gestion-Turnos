@@ -24,7 +24,7 @@ public class AsesoresController : Controller
         _Context = context;
     }
     
-    public IActionResult Login()
+    public IActionResult Index()
     {
         return View();
     }

@@ -1,5 +1,5 @@
 @{
-    ViewData["Title"] = "Sellecionar categoria";
+    ViewData["Title"] = "Seleccionar categoria";
     var hora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
 }
 
@@ -18,7 +18,7 @@
                 @foreach (var categoria in Model)
                 {
                     <div class="col-sm-6 p-2">
-                        <a asp-controller="Turnos" asp-action="TomarTurno" asp-route-siglas="@categoria.Abreviacion"
+                        <a asp-controller="Turnos" asp-action="Turno" asp-route-siglas="@categoria.Abreviacion"
                             class="d-flex btn btn-lg btn-dark p-5">@categoria.Nombre</a>
                     </div>
                 }

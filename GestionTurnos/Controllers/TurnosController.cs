@@ -29,42 +29,28 @@ public class TurnosController : Controller {
 
         ViewBag.Documento = HttpContext.Session.GetString("Documento");
 
-        string seleccion = "";
-        string turno = "";
-        var result = await _context.Categorias.FirstOrDefaultAsync(c => c.Abreviacion == siglas);
-        int contador = result.Contador +1;
-
-        turno = siglas+"-"+(contador < 10 ? "00"+contador: "0"+contador);
-
-        ViewBag.Turno = turno;
-        return View();
-    }
-
-    public async Task<IActionResult> TomarTurno(string turno){
-
-        string documento = HttpContext.Session.GetString("Documento");
-
-        string siglas = turno.Substring(0,2);
+        string ticket = "";
         var result = await _context.Categorias.FirstOrDefaultAsync(c => c.Abreviacion == siglas);
 
         result.Contador = result.Contador+1; 
+        ticket = siglas+"-"+(result.Contador < 10 ? "0"+result.Contador: result.Contador);
+
+        ViewBag.Ticket = ticket;
 
         _context.Categorias.Update(result);
         await _context.SaveChangesAsync();
 
         var turnoIn = new Turno{
             Categoria = result.Nombre,
-            Documento = documento,
-            Ticket = turno,
+            Documento = ViewBag.Documento,
+            Ticket = ticket,
             FechaTicket = DateTime.Now,
             Proceso = "En cola"
-
         };
 
         _context.Turnos.Add(turnoIn);
         await _context.SaveChangesAsync();
 
-
-        return RedirectToAction("Index");
+        return View();
     }
 }

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="text-center">
+        <div class="card">
+            <div class="card-body">
+                <h4>HOSPITAL LA MISERICORDIA</h4>
+                <p class="card-text">@ViewBag.Usuario</p>
+                <h1 class="card-title">@ViewBag.Turno</h1>
+                <p class="card-text">24 abril 2024 08:48:58 PM</p>
+
+            </div>
+            <div class="card-footer">
+                <a asp-controller="Home"  asp-action="TomarTurno" asp-route-turno="@ViewBag.Turno"  class="btn btn-lg btn-primary">Tomar turno</a>
+                <a asp-controller="Home"  asp-action="Categorias" asp-route-turno="@ViewBag.Turno"  class="btn btn-lg btn-dark">Dejar turno</a>
+            </div>
+        </div>
+
+    </div>
+</div>

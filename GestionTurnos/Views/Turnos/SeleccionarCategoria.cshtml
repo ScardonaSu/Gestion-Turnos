@@ -4,27 +4,24 @@
 }
 
 <div class="container">
-    <div class="row">
-        <div class="d-flex">
-            <div class="col float-right">
-                <p>@ViewBag.Documento</p>
+    
+    <div class="row d-flex">
+            <div class="col ">
+                <p class="float-start">CC-@ViewBag.Documento</p>
+                <p class="float-end">@hora</p>
             </div>
-            <div class="col">
-                <p>@hora</p>
-            </div>
-        </div>
     </div>
-    <div class="section">
-        <div class="text-center">
+    <div class="row mt-5">
+        <div class="text-center mx-auto col-sm-8">
             <h1>Escoge una categoría para tomar el turno</h1>
-            <div class="grid-container">
-                <div class="row text-center">                    
-                    @foreach(var categoria in Model){
-                        <div class="col-sm-6 p-2">                        
-                            <a asp-controller="Turnos" asp-action="TomarTurno" asp-route-siglas="@categoria.Abreviacion" class="grid-item d-flex btn btn-lg btn-dark">@categoria.Nombre</a>
-                        </div>
-                    }
-                </div>
+            <div class="row mt-4">
+                @foreach (var categoria in Model)
+                {
+                    <div class="col-sm-6 p-2">
+                        <a asp-controller="Turnos" asp-action="TomarTurno" asp-route-siglas="@categoria.Abreviacion"
+                            class="d-flex btn btn-lg btn-dark p-5">@categoria.Nombre</a>
+                    </div>
+                }
             </div>
         </div>
     </div>

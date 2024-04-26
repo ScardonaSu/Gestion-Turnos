@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Ingresar documento";
+    var hora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <div class="d-flex float-end">
+                <P>@hora</P>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-sm-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Bienvenido</h2>
+                    <form asp-controller="Turnos" asp-action="SeleccionarCategoria" method="post">
+                        <div class="form-group mb-3">
+                            <label for="documento" class="form-label">Para ingresar por favor digite el numero de su cédula</label>
+                            <input type="text" name="documento" class="form-control" id="documento">
+                            <span for="documento" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,7 +1,11 @@
 using System.Security.Claims;
 using GestionTurnos.Data;
 using GestionTurnos.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 using Microsoft.AspNetCore.Identity;
+>>>>>>> d8e829df6229074679061d7e8d2e8ffa41bcc2fb
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +22,7 @@ public class AsesoresController : Controller
         _Context = context;
     }
     
-    public IActionResult Login()
+    public IActionResult Index()
     {
 
         return View();
@@ -35,6 +39,8 @@ public class AsesoresController : Controller
         {
             this.HttpContext.Session.SetInt32("session",asesor.Id);
             return RedirectToAction("Create", "Asesores");
+            
+            return RedirectToAction("Index", "Home");
         }
         
         return RedirectToAction("Login", "Asesores");
@@ -69,6 +75,15 @@ public class AsesoresController : Controller
     [HttpPost]
     public async Task<IActionResult> Create(Asesor _asesor)
     {
+        var Foto = Request.Form.Files["Foto"];
+        if (Foto != null && Foto.Length > 0)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                await Foto.CopyToAsync(memoryStream);
+                _asesor.FotoPerfil = memoryStream.ToArray();
+            }
+        }
       
         _asesor.Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password);
         _Context.Asesores.Add(_asesor);

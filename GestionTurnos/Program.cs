@@ -1,4 +1,5 @@
 using GestionTurnos.Data;
+using GestionTurnos.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,11 @@ builder.Services.AddDbContext<BaseContext>(options =>
         Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql"))
 );
 
+builder.Services.AddSession(options => {
+    options.IdleTimeout = TimeSpan.FromMinutes(25);
+    options.Cookie.IsEssential = true;
+    options.Cookie.HttpOnly = true;
+});
 /// session
 builder.Services.AddSession(options =>
 {
@@ -45,7 +51,7 @@ builder.Services.AddSession(options =>
     });
     */
 
-
+builder.Services.AddScoped<Turno>();
 
 var app = builder.Build();
 
@@ -64,9 +70,10 @@ app.UseRouting();
 
 /*app.UseAuthentication();*/
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Asesores}/{action=Login}/{id?}");
+    pattern: "{controller=Asesores}/{action=Index}/{id?}");
 
 app.Run();

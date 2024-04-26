@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Su turno es";
+    var hora = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+}
+
+<div class="container">
+    <div class="text-center">
+        <div class="card">
+            <div class="card-body">
+                <h4>Su turno es</h4>
+                <p class="card-text">@ViewBag.Documento</p>
+                <h1 class="card-title">@ViewBag.Ticket</h1>
+                <p class="card-text">@hora</p>
+
+            </div>
+            <div class="card-footer">
+                <a asp-controller="Turnos"  asp-action="Index" asp-route-turno="@ViewBag.Turno"  class="btn btn-lg btn-dark">Volver</a>
+            </div>
+        </div>
+
+    </div>
+</div>

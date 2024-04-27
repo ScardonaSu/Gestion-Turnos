@@ -764,19 +764,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/santiagocardona/.nuget/packages/": {}
+    "/home/riwip5-006/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
+      "projectUniqueName": "/home/riwip5-006/SANTIAGO/Gestion-Turnos/GestionTurnos/GestionTurnos.csproj",
       "projectName": "GestionTurnos",
-      "projectPath": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/GestionTurnos.csproj",
-      "packagesPath": "/Users/santiagocardona/.nuget/packages/",
-      "outputPath": "/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/obj/",
+      "projectPath": "/home/riwip5-006/SANTIAGO/Gestion-Turnos/GestionTurnos/GestionTurnos.csproj",
+      "packagesPath": "/home/riwip5-006/.nuget/packages/",
+      "outputPath": "/home/riwip5-006/SANTIAGO/Gestion-Turnos/GestionTurnos/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/santiagocardona/.nuget/NuGet/NuGet.Config"
+        "/home/riwip5-006/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -794,11 +794,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -837,7 +832,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -6,14 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestionTurnos.Controllers;
-
-public class TelevisorController : Controllers
+public class TelevisorController : Controller
 {
-    public readonly BaseContext _Context;
+    public readonly BaseContext _DbContext;
 
     public TelevisorController(BaseContext context)
     {
-        _Context = context;
+        _DbContext = context;
     }
     public IActionResult Index()
     {

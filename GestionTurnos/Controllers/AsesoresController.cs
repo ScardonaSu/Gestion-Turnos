@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 using Microsoft.AspNetCore.Identity;
->>>>>>> d8e829df6229074679061d7e8d2e8ffa41bcc2fb
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

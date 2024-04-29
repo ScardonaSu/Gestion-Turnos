@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 using Microsoft.AspNetCore.Identity;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +23,7 @@ public class AsesoresController : Controller
     
     public IActionResult Index()
     {
+
         return View();
     }
 
@@ -31,10 +31,13 @@ public class AsesoresController : Controller
     public async Task<IActionResult> Login(string correo, string password)
     {
         
-        var aseseor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo && e.Password == password);
-
-        if (aseseor != null)
+        var asesor = await _Context.Asesores.FirstOrDefaultAsync(e => e.Correo == correo);
+        var verifyPassword = BCrypt.Net.BCrypt.Verify(password,asesor.Password); 
+        
+        if (asesor != null && verifyPassword == true)
         {
+            this.HttpContext.Session.SetInt32("session",asesor.Id);
+            return RedirectToAction("Create", "Asesores");
             
             return RedirectToAction("Index", "Home");
         }
@@ -46,9 +49,8 @@ public class AsesoresController : Controller
 
     public async Task<IActionResult> Logout()
     {
-        /*await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        HttpContext.Session.Clear();
-        HttpContext.Session.Remove("session");*/
+/*         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);*/
+        HttpContext.Session.Remove("session");
         
         return RedirectToAction("Login", "Asesores");
     }
@@ -57,7 +59,16 @@ public class AsesoresController : Controller
     
     public IActionResult Create()
     {
-        return View(); 
+        /* ////////////// GUARDIAN  ///////// */
+        var SesionUser = HttpContext.Session.GetInt32("session");
+        if (SesionUser != null)
+        {
+            return RedirectToAction("Index", "Asesores"); /* COLOCAR EN VISTA DESPUES DE QUE EL USUARIO INGRESA AL SISTEMA Y COLOCAR LAS VISTAS CORRESPONDIENTES */
+        }else
+        {
+            return View();
+        }
+        
     }
 
     [HttpPost]
@@ -72,13 +83,8 @@ public class AsesoresController : Controller
                 _asesor.FotoPerfil = memoryStream.ToArray();
             }
         }
-        Asesor newAsesor = new Asesor{
-            
-            Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password)
-
-        };
-        _asesor.Password = newAsesor.Password;
-
+      
+        _asesor.Password = BCrypt.Net.BCrypt.HashPassword(_asesor.Password);
         _Context.Asesores.Add(_asesor);
         await _Context.SaveChangesAsync();
         return RedirectToAction("Login", "Asesores");

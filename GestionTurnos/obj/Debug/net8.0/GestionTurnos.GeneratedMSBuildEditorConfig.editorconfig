@@ -9,51 +9,63 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestionTurnos
 build_property.RootNamespace = GestionTurnos
-build_property.ProjectDir = /Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/
+build_property.ProjectDir = /home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos
+build_property.MSBuildProjectDirectory = /home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Pages/Modulos/Index.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Pages/Modulos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTW9kdWxvcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Asesores/Create.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Asesores/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXNlc29yZXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Asesores/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXNlc29yZXMvTG9naW4uY3NodG1s
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Asesores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXNlc29yZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Home/Index.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Home/Privacy.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Shared/Error.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/_ViewImports.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Turnos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHVybm9zL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Turnos/SeleccionarCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHVybm9zL1NlbGVjY2lvbmFyQ2F0ZWdvcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Turnos/Turno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVHVybm9zL1R1cm5vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/_ViewStart.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/santiagocardona/Documents/Riwi/GestionTurnos/GestionTurnos/Views/Shared/_Layout.cshtml]
+[/home/riwip4-010/Videos/Gestion-Turnos/GestionTurnos/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-856382vwsj

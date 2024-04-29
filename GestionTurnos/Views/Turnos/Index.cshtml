@@ -18,10 +18,10 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title">Bienvenido</h2>
-                    <form asp-controller="Turnos" asp-action="SeleccionarCategoria" method="post">
+                    <form class="text-center" asp-controller="Turnos" asp-action="SeleccionarCategoria" method="post">
                         <div class="form-group mb-3">
-                            <label for="documento" class="form-label">Para ingresar por favor digite el numero de su cédula</label>
-                            <input type="text" name="documento" class="form-control" id="documento">
+                            @* <label for="documento" class="form-label">Por favor ingresa el numero de tu cédula</label> *@
+                            <input type="text" name="documento" class="form-control" id="documento" placeholder="Por favor ingresa el numero de tu cédula">
                             <span for="documento" class="text-danger"></span>
                         </div>
                         <button type="submit" class="btn btn-lg btn-primary">Enviar</button>

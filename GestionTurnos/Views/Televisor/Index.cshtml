@@ -156,7 +156,7 @@ figure img{width:300px;}
                   <!--Heading-->
                   <div class="item-box-blog-heading">
                     <a href="#" tabindex="0">
-                      <h5>Modulo 1</h5>
+                      <h5>@_context.Turno.where(t =>t.Proceso == "Atendiendo" && t.Categoria == "SM")</h5>
                     </a>
                   </div>
                   <!--Data-->
@@ -240,7 +240,7 @@ figure img{width:300px;}
                   <!--Heading-->
                   <div class="item-box-blog-heading">
                     <a href="#" tabindex="0">
-                      <h5>Modulo 5</h5>
+                      <h5>Modulo 4</h5>
                     </a>
                   </div>
                   <!--Data-->
@@ -249,7 +249,7 @@ figure img{width:300px;}
                   </div>
                   <!--Text-->
                   <div class="item-box-blog-text">
-                    <p>moaaa</p>
+                    <p>@{_DbContext.Turno.where(t=> t.Categoria == "Pago de factura").list}</p>
                   </div>
                   <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
                   <!--Read More Button-->

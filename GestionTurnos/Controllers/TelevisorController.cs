@@ -16,6 +16,7 @@ public class TelevisorController : Controller
     }
     public IActionResult Index()
     {
-        return View();
+        
+        return View(_DbContext.);
     }
 }
